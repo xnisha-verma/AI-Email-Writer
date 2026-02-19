@@ -32,14 +32,17 @@ async function generateReply(button, composeBox) {
 
     const emailContent = getEmailContent();
 
-    const response = await fetch("http://localhost:8080/api/email/generate", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        emailContent,
-        tone: "professional",
-      }),
-    });
+    const response = await fetch(
+      "https://ai-email-writer-crn8.onrender.com/api/email/generate",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          emailContent,
+          tone: "professional",
+        }),
+      },
+    );
 
     if (!response.ok) throw new Error("API failed");
 
