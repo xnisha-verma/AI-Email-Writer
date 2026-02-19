@@ -16,7 +16,7 @@ function App() {
     setError('');
     try{
       const response = await axios.post(
-        "http://localhost:8080/api/email/generate",
+        "https://ai-email-writer-crn8.onrender.com/api/email/generate",
         {
           emailContent: emailContent,
           tone: tone,
